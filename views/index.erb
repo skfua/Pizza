@@ -1,7 +1,26 @@
 <h3>Welcome to pizza shop!</h3>
-<% @products.each do |key| %>
-  <p>
-    product
-  </p>
+
+<div class="row">
+<% @products.each do |p| %>
+  <div class="col-md-3">
+    <div class="">
+      <%= p.title %>
+    </div>
+    <div class="">
+      <img src="<%= p.path_to_image %>" style="width: 200px; height: 200px"/>
+    </div>
+    <div class="">
+      <%= p.description %>
+    </div>
+    <div class="">
+      Price is: <%= p.price %> UAH
+    </div>
+    <div class="">
+      The size is: <%= p.size %> sm
+    </div>
+
+  </div>
 <% end %>
+</div>
+<br>
 <button type="button" name="button" class="btn btn-primary" onclick="say_hello()">Click me!</button>
