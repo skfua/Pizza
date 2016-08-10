@@ -41,7 +41,11 @@ post '/card' do
       item[0] = @products.find(item[0])
       @total_price += (item[0].price.to_i * item[1].to_i)
   end
-  erb :card2
+  if @order_line.empty?
+    erb "Your card is empty"
+    else
+    erb :card2
+  end
 end
 
 
@@ -59,7 +63,10 @@ post '/order' do
     end
     erb :card2
   end
+end
 
+post  '/cancelorder' do
+  erb "Your order was deleted <script>localStorage_clean()</script>"
 end
 
 get '/orders' do

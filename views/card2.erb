@@ -57,8 +57,13 @@
     <div class="">
       <p style="font-weight: bold; font-size:16px">
         Total PRICE: <%= @total_price %>
-      </p>
+        </p>
     </div>
     <br>
     <button type="submit" name="button" class="btn btn-lg btn-success">Confirm Order</button>
 </form>
+<form class="absolute" action="/cancelorder" method="post">
+  <button type="submit" name="button" class="btn btn-lg btn-danger absolute-button">Cancel order</button>
+</form>
+<div class="">
+</div>
