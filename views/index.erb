@@ -1,3 +1,7 @@
+
+
+
+
 <h3>Welcome to pizza shop!</h3>
 
 <div class="row">
@@ -18,9 +22,10 @@
     <div class="">
       The size is: <%= p.size %> sm
     </div>
-
+    <br>
+    <!-- <button type="button" name="button" class="btn btn-sm btn-success">Add to card</button> -->
+      <button type="button" class="btn btn-sm btn-success" onclick="add_to_card(<%= p.id %>)">ADD TO CARD</button>
   </div>
 <% end %>
 </div>
 <br>
-<button type="button" name="button" class="btn btn-primary" onclick="say_hello()">Click me!</button>

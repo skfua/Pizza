@@ -5,6 +5,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!-- Bootstrap -->
 		<link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="/vendor/jquery-1.9.1.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+		<script src="/custom.js"></script>
 
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -14,6 +19,7 @@
 		<![endif]-->
 	</head>
 	<body>
+
 		<div class="container">
 
 			<!-- Static navbar -->
@@ -25,29 +31,39 @@
 			      <span class="icon-bar"></span>
 			      <span class="icon-bar"></span>
 			    </button>
-			    <a class="navbar-brand" href="/">Pizzaplace</a>
+			    <a class="navbar-brand" href="/">ALENINA</a>
 			  </div>
 			  <div class="navbar-collapse collapse">
 			    <ul class="nav navbar-nav">
-			      <li><a href="/secure/place">Secret</a></li>
+			      <li><a href="/orders">Orders</a></li>
 			    </ul>
+					<ul class="nav navbar-nav navbar-right">
+
+			 <li>
+				 <form class="" action="/card" method="post" style="margin-top: 2px; margin-right: 10px">
+				 <input type="hidden" name="orders" value="" style="margin-right: 10px" id ="orders_input">
+				 <input type="submit" name="card" value="CARD" class="btn btn-warning btn-lg" id="order_button">
+				 </form>
+			 </li>
+		 </ul>
 			    	  </div><!--/.nav-collapse -->
 			</nav>
 
 			<div>
 			      <%if @error then %>
-			          <div class="alert alert-error"><%=@error%></div>
+			          <div class="alert alert-danger"><%=@error%></div>
 			      <% end %>
 			      <%= yield %>
 			</div>
 
 	</div>
+	<script type="text/javascript">
+	    $(function() {
+	      update_orders_input();
+	      update_orders_button();
+	    });
+	 </script>
 
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="/vendor/jquery-1.9.1.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
-		<script src="/custom.js"></script>
   </body>
 </html>

@@ -1,0 +1,33 @@
+<table class="table">
+  <thead>
+    <th>
+      Name
+    </th>
+    <th>
+      Phone
+    </th>
+    <th>
+      City
+    </th>
+    <th>
+      Order
+    </th>
+  </thead>
+  <% @orders.each do |order| %>
+  <tr>
+    <td>
+      <%=order['name'] %>
+    </td>
+    <td>
+      <%=order['phone'] %>
+    </td>
+    <td>
+      <%=order['adress'] %>
+    </td>
+    <td>
+      <%=order['order_list'] %>
+    </td>
+  </tr>
+
+  <% end %>
+</table>
